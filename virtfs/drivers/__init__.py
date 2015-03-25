@@ -63,6 +63,8 @@ class VirtFSDriver(object):
         except AttributeError:
             obj = type(self)._create(os.path.join(self._virtfs_path, name))
             setattr(self, name, obj)
+            #debug
+            print str(self._virtfs_path)
             return getattr(self, name)
 
     def __str__(self):
